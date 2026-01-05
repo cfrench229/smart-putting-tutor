@@ -15,7 +15,7 @@ using an IMU sensor and embedded Linux.
 - Python (data analysis & ML)
 - IMU sensors
 - GitHub Actions (CI)
-- Unit testing
+- Unit testing (GTest)
 
 ## Status
 🚧 Early development — hardware setup and repository structure in progress.
