@@ -1,0 +1,10 @@
+# CMake build artifacts
+build/
+
+# Python virtual environments
+venv/
+tools/python/venv/
+
+# Python cache
+__pycache__/
+*.pyc
