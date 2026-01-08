@@ -1,0 +1,6 @@
+{
+  "face_angle_deg": 0.3,
+  "ang_vel_stability": 0.06,
+  "tempo_ratio": 2.0,
+  "path_deviation": 0.04
+}

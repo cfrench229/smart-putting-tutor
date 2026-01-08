@@ -8,3 +8,8 @@ tools/python/venv/
 # Python cache
 __pycache__/
 *.pyc
+
+# Output directory
+bin/
+
+include/nlohmann/
