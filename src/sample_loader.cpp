@@ -5,7 +5,9 @@
 #include <filesystem>
 
 namespace fs = std::filesystem;
-
+// Opens json files from the specified folder path, calculates score and
+// prints out for each file. This is only meant for sample purposes and does
+// not provide real data.
 #ifdef USE_SAMPLES
 void loadAndPrintSamples(const std::string& folderPath) {
     std::cout << "Loading sample strokes from folder: " << folderPath << "\n";
