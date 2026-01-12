@@ -6,25 +6,6 @@ using json = nlohmann::json;
 
 // ---------------- JSON ----------------
 
-bool StrokeFeatures::loadFromJsonFile(const std::string& filename) {
-    std::ifstream f(filename);
-    if (!f.is_open()) return false;
-
-    json j;
-    f >> j;
-
-    try {
-        face_angle_deg    = j.at("face_angle_deg").get<double>();
-        ang_vel_stability = j.at("ang_vel_stability").get<double>();
-        tempo_ratio       = j.at("tempo_ratio").get<double>();
-        path_deviation    = j.at("path_deviation").get<double>();
-    } catch (...) {
-        return false;
-    }
-
-    return true;
-}
-
 bool StrokeFeatures::saveToJsonFile(const std::string& filename) const {
     std::ofstream f(filename);
     if (!f.is_open()) return false;
