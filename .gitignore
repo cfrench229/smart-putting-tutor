@@ -1,15 +1,23 @@
 # CMake build artifacts
-build/
+/build/
+/build-tests/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
 
-# Python virtual environments
-venv/
-tools/python/venv/
+# Temporary repos / dependencies
+/tmp_json_repo/
+/include/nlohmann
 
-# Python cache
-__pycache__/
-*.pyc
+# IDE/editor files
+.vscode/
+*.swp
+*.idea/
+
+# Coverage reports
+/coverage/
+*.info
 
 # Output directory
-bin/
-
-include/nlohmann/
+/bin
