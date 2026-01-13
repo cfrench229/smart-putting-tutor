@@ -43,6 +43,7 @@ def run_cmake(samples=False):
     os.makedirs(BUILD_DIR, exist_ok=True)
     cmake_args = ["cmake", ".."]
     cmake_args.append(f"-DBUILD_WITH_SAMPLES={'ON' if samples else 'OFF'}")
+    cmake_args.append(f"-DBUILD_TESTS=OFF")
 
     print(f"Configuring project with: {' '.join(cmake_args)}")
     subprocess.run(cmake_args, cwd=BUILD_DIR, check=True)

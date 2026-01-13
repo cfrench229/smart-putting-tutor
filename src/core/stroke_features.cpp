@@ -41,9 +41,11 @@ double score_path(double path_deviation) {
 
 
 double total_score(const StrokeFeatures& f) {
-    return
-        0.40 * score_face_angle(f.face_angle_deg) +
-        0.20 * score_stability(f.ang_vel_stability) +
-        0.20 * score_tempo(f.tempo_ratio) +
-        0.20 * score_path(f.path_deviation);
+    if (!f.is_set) return 0.0;  // blank stroke
+    
+    return 0.40 * score_face_angle(f.face_angle_deg) +
+           0.20 * score_stability(f.ang_vel_stability) +
+           0.20 * score_tempo(f.tempo_ratio) +
+           0.20 * score_path(f.path_deviation);
 }
+

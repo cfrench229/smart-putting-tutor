@@ -9,6 +9,8 @@ struct StrokeFeatures {
     double tempo_ratio;
     double path_deviation;
 
+    bool is_set = false;  // false by default
+    
         // JSON helper functions
     bool saveToJsonFile(const std::string& filename) const;
 };
