@@ -1,19 +1,19 @@
 name: Build and Test
 
-# When to run
 on:
   push:
     branches:
-      - '**'
+      - '**'       # run on all branches
   pull_request:
-      - main
+    branches:
+      - main       # run for PRs targeting main
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v3
 
       - name: Install dependencies
