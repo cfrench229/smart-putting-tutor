@@ -27,9 +27,9 @@ jobs:
       # Step 3: Build the project
       - name: Build project
         working-directory: ${{ github.workspace }}
-        run: python3 build.py --setup --build
+        run: python3 scripts/build.py --setup --build
 
       # Step 4: Run unit tests
       - name: Run tests
         working-directory: ${{ github.workspace }}
-        run: python3 test.py
+        run: python3 scripts/test.py
