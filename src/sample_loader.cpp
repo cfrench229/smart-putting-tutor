@@ -38,6 +38,7 @@ void loadAndPrintSamples(const std::string& folderPath) {
                 stroke.ang_vel_stability = j["ang_vel_stability"];
                 stroke.tempo_ratio       = j["tempo_ratio"];
                 stroke.path_deviation    = j["path_deviation"];
+                stroke.is_set = true;
             } catch (const std::exception& e) {
                 std::cerr << "Invalid/missing field in " << entry.path() << ": " << e.what() << "\n";
                 continue;
