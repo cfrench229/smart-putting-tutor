@@ -4,10 +4,22 @@ project(PuttingTutor)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# -------------------------
 # Options
+# -------------------------
 option(BUILD_WITH_SAMPLES "Build with sample strokes for testing" OFF)
 option(BUILD_TESTS "Build unit tests" OFF)
+option(BUILD_FOR_ARM "Build for ARM target (Pi Zero 2 W)" OFF)
 
+# -------------------------
+# ARM detection / flags
+# -------------------------
+if(BUILD_FOR_ARM)
+    message(STATUS "Building for ARM target")
+    add_definitions(-DARM_BUILD)
+    # Optional: additional flags
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2 -march=armv8-a")
+endif()
 
 # -------------------------
 # Main application sources
@@ -26,12 +38,18 @@ endif()
 
 # Main executable
 add_executable(putting_tutor ${SOURCES})
-
 target_include_directories(putting_tutor PRIVATE include)
 
+
+# Use the CMAKE_RUNTIME_OUTPUT_DIRECTORY if defined; otherwise default to PROJECT_SOURCE_DIR/bin
+if(NOT DEFINED CMAKE_RUNTIME_OUTPUT_DIRECTORY)
+    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+endif()
+
 set_target_properties(putting_tutor PROPERTIES
-    RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}
 )
+
 
 # -------------------------
 # Unit tests
