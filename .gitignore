@@ -1,5 +1,6 @@
 # CMake build artifacts
-/build/
+/build-arm64/
+/build-x86/
 /build-tests/
 CMakeCache.txt
 CMakeFiles/
